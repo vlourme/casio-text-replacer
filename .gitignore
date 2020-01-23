@@ -93,7 +93,7 @@ dist/
 .storybook-out
 
 # Binary outputs
-.bin
+*.bin
 
 # vuepress build output
 .vuepress/dist
@@ -112,4 +112,3 @@ tmp/
 temp/
 
 # End of https://www.gitignore.io/api/node
-*.bin
