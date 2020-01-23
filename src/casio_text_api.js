@@ -83,7 +83,7 @@ module.exports = class CasioTextAPI {
         let line = "";
 
         // Iterate buffer
-        for (var i = 0; i < this.buffer.length - 1; i++) {
+        for (var i = 0; i <= this.buffer.length - 1; i++) {
             // Parse hex
             const number = this.buffer.readInt8(i);
             const hex = number.toString(16);
