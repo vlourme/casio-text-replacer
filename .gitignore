@@ -92,6 +92,9 @@ dist/
 .out
 .storybook-out
 
+# Binary outputs
+.bin
+
 # vuepress build output
 .vuepress/dist
 
