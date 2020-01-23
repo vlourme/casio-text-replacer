@@ -112,6 +112,10 @@ module.exports = class CasioTextAPI {
             }
         }
 
+        // Push the last line if available
+        if (line)
+            ret.push(line);
+
         // Return array of text
         return ret;
     }
