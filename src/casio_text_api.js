@@ -12,17 +12,13 @@ const replace = require('buffer-replace');
 // Export class
 module.exports = class CasioTextAPI {
     /**
-     * Open binary file to buffer
+     * Initialize by setting a buffer
      * 
-     * @param {string} File 
+     * @param { Buffer } Buffer 
      */
-    constructor(file) {
-        // Check if path exists
-        if (!fs.existsSync(file))
-            return;
-
-        // Open file
-        this.buffer = fs.readFileSync(file);
+    constructor(buffer) {
+        // Save buffer
+        this.buffer = buffer;
 
         // Read content from buffer
         this.original = this.read_text();
