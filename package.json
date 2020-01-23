@@ -1,0 +1,15 @@
+{
+  "name": "casio-hex-cli",
+  "version": "1.0.0",
+  "description": "Simple tool to replace texts inside Casio Calculators OS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Victor Lourme",
+  "license": "MIT",
+  "dependencies": {
+    "buffer-replace": "^1.0.0",
+    "colors": "^1.4.0"
+  }
+}
