@@ -1,0 +1,107 @@
+[
+    {
+        "title": "English - How to enter",
+        "value": {
+            "from": "0x0002F82E",
+            "to": "0x0002F8CD"
+        }
+    },
+    {
+        "title": "English - Restricted Apps",
+        "value": {
+            "from": "0x0002F8CE",
+            "to": "0x0002F947"
+        }
+    },
+    {
+        "title": "English - How to exit",
+        "value": {
+            "from": "0x0002F948",
+            "to": "0x0002FB62"
+        }
+    },
+    {
+        "title": "French - How to enter",
+        "value": {
+            "from": "0x0021D195",
+            "to": "0x0021D24C"
+        }
+    },
+    {
+        "title": "French - Restricted Apps",
+        "value": {
+            "from": "0x0021D24D",
+            "to": "0x0021D2C1"
+        }
+    },
+    {
+        "title": "French - How to exit",
+        "value": {
+            "from": "0x0021D2C2",
+            "to": "0x0021D561"
+        }
+    },
+    {
+        "title": "Spanish - How to enter",
+        "value": {
+            "from": "0x002122AA",
+            "to": "0x00212352"
+        }
+    },
+    {
+        "title": "Spanish - Restricted Apps",
+        "value": {
+            "from": "0x00212353",
+            "to": "0x002123C3"
+        }
+    },
+    {
+        "title": "Spanish - How to exit",
+        "value": {
+            "from": "0x002123C4",
+            "to": "0x0021262D"
+        }
+    },
+    {
+        "title": "German - How to enter",
+        "value": {
+            "from": "0x00217972",
+            "to": "0x00217A31"
+        }
+    },
+    {
+        "title": "German - Restricted Apps",
+        "value": {
+            "from": "0x00217A32",
+            "to": "0x00217AB0"
+        }
+    },
+    {
+        "title": "German - How to exit",
+        "value": {
+            "from": "0x00217AB1",
+            "to": "0x00217D8C"
+        }
+    },
+    {
+        "title": "Portuguese - How to enter",
+        "value": {
+            "from": "0x0022294E",
+            "to": "0x002229F6"
+        }
+    },
+    {
+        "title": "Portuguese - Restricted Apps",
+        "value": {
+            "from": "0x002229F7",
+            "to": "0x00222A67"
+        }
+    },
+    {
+        "title": "Portuguese - How to exit",
+        "value": {
+            "from": "0x00222A6B",
+            "to": "0x00222CE3"
+        }
+    }
+]

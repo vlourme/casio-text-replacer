@@ -12,7 +12,7 @@ const prompts = require('prompts');
 const colors = require('colors');
 const program = require('commander');
 const API = require('./casio_text_api');
-const langs = JSON.parse(fs.readFileSync('./langs.json'));
+const offsets = JSON.parse(fs.readFileSync('./offsets.json'));
 
 // Program opening
 console.log('[i] CTR-tool v1.0 by Victor Lourme'.cyan.bold);
@@ -46,20 +46,7 @@ program
                 type: 'select',
                 name: 'choice',
                 message: 'Choose text to edit',
-                choices: [
-                    { 
-                        title: 'English - How to enter',
-                        value: langs.english['how-to-enter']
-                    },
-                    { 
-                        title: 'English - Restricted apps',
-                        value: langs.english['restricted-apps']
-                    },
-                    { 
-                        title: 'English - How to exit',
-                        value: langs.english['how-to-exit']
-                    }
-                ]
+                choices: offsets
             });
 
             // Set range
@@ -114,20 +101,7 @@ program
                 type: 'select',
                 name: 'choice',
                 message: 'Choose text to edit',
-                choices: [
-                    { 
-                        title: 'English - How to enter',
-                        value: langs.english['how-to-enter']
-                    },
-                    { 
-                        title: 'English - Restricted apps',
-                        value: langs.english['restricted-apps']
-                    },
-                    { 
-                        title: 'English - How to exit',
-                        value: langs.english['how-to-exit']
-                    }
-                ]
+                choices: offsets
             });
 
             // Set range
