@@ -12,6 +12,7 @@ const prompts = require('prompts');
 const colors = require('colors');
 const program = require('commander');
 const API = require('./casio_text_api');
+const langs = JSON.parse(fs.readFileSync('./langs.json'));
 
 // Program opening
 console.log('[i] CTR-tool v1.0 by Victor Lourme'.cyan.bold);
@@ -28,14 +29,42 @@ program.option('-o, --output <path>', 'Output file for buffer');
 program
     .command('texts <input>')
     .option('-a, --all', 'Read the entire file')
+    .option('-r, --range', 'Choose a defined ranges for known systems')
     .option('-f, --from <address>', 'Start reading the buffer at certain address (e.g.: 0x01)')
     .option('-t, --to <address>', 'Read the buffer until a certain address (e.g.:0x9F)')
     .description('Get a list of texts in the selected area')
-    .action((input, cmdObj) => {
+    .action(async (input, cmdObj) => {
         // Check for input file
         if (!fs.existsSync(input)) {
             console.log('[!] Unexistant input file'.red.bold);
             process.exit(0);
+        }
+
+        // Choose ranges
+        if (cmdObj.range) {
+            const prompt = await prompts({
+                type: 'select',
+                name: 'choice',
+                message: 'Choose text to edit',
+                choices: [
+                    { 
+                        title: 'English - How to enter',
+                        value: langs.english['how-to-enter']
+                    },
+                    { 
+                        title: 'English - Restricted apps',
+                        value: langs.english['restricted-apps']
+                    },
+                    { 
+                        title: 'English - How to exit',
+                        value: langs.english['how-to-exit']
+                    }
+                ]
+            });
+
+            // Set range
+            cmdObj.from = Number(prompt.choice.from);
+            cmdObj.to = Number(prompt.choice.to);
         }
 
         // Get the area
@@ -77,6 +106,33 @@ program
         // Log
         console.log('[*] Starting interactive mode...'.green)
         console.log('[!] Don\'t forget to add --output option to save the render.'.grey.bold)
+
+        // Choose ranges
+        if (cmdObj.range) {
+            const prompt = await prompts({
+                type: 'select',
+                name: 'choice',
+                message: 'Choose text to edit',
+                choices: [
+                    { 
+                        title: 'English - How to enter',
+                        value: langs.english['how-to-enter']
+                    },
+                    { 
+                        title: 'English - Restricted apps',
+                        value: langs.english['restricted-apps']
+                    },
+                    { 
+                        title: 'English - How to exit',
+                        value: langs.english['how-to-exit']
+                    }
+                ]
+            });
+
+            // Set range
+            cmdObj.from = Number(prompt.choice.from);
+            cmdObj.to = Number(prompt.choice.to);
+        }
 
         // Get the area
         let buffer = fs.readFileSync(input);
