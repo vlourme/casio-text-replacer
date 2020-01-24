@@ -93,10 +93,11 @@ program
 program
     .command('interactive <input>')
     .option('-a, --all', 'Read the entire file')
+    .option('-r, --range', 'Choose a defined ranges for known systems')
     .option('-f, --from <address>', 'Start reading the buffer at certain address (e.g.: 0x01)')
     .option('-t, --to <address>', 'Read the buffer until a certain address (e.g.:0x9F)')
     .description('Read and edit texts one by one')
-    .action((input, cmdObj) => {
+    .action(async (input, cmdObj) => {
         // Check for input file
         if (!fs.existsSync(input)) {
             console.log('[!] Unexistant input file'.red.bold);
