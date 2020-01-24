@@ -28,49 +28,6 @@ module.exports = class CasioTextAPI {
     }
 
     /**
-     * Get the format of the text
-     * This will return special formatting with significant letters :
-     * * X = Letter
-     * * B = Simple line break (most likely this -> 00 20)
-     * * A = Advanced line break (most likely this -> 00 20 20 00)
-     * 
-     * ! Deprecated, format is often wrong and this function is not used anymore in rendering process.
-     * 
-     * @returns {string} Format 
-     */
-    get_format() {
-        // Prepare format
-        var ret = "";
-
-        // Iterate buffer
-        for (var i = 0; i < this.buffer.length - 1; i++) {
-            // Parse hex
-            const hex = this.buffer.readInt8(i).toString(16);
-
-            // Find hex format
-            if (hex != 0) {
-                // If next hex is a 00 -> Advanced break
-                if (hex == "20" && this.buffer.readInt8(i + 1).toString(16) == 0) {
-                    // Register advanced break
-                    ret += "A";
-                } else {
-                    // Register letter
-                    ret += "X";
-                }
-            } else {
-                // If next hex is a 20 -> Simple break
-                if (this.buffer.readInt8(i + 1).toString(16) == "20") {
-                    // Register simple break
-                    ret += "B";
-                }
-            }
-        }
-
-        // Return format 
-        return ret;
-    }
-
-    /**
      * Read the text from buffer
      * 
      * @returns {array} Each element is a chain of text
