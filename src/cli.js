@@ -85,7 +85,7 @@ program
         // List texts
         console.log('[i] Lines in the selected area:'.blue.italic)
         api.text.forEach(text => {
-            console.log(`- "${text}" - ${text.length} chars `.grey)
+            console.log(`- "`.grey + text.grey.bold + `" - ${text.length} chars `.grey)
         });
     });
 
@@ -157,7 +157,7 @@ program
 
             for (var i = 0; i < api.text.length; i++) {
                 // Display text
-                console.log(`- "${api.text[i]}" - ${api.text[i].length} chars `.grey)
+                console.log(`- "`.grey + text.grey.bold + `" - ${api.text[i].length} chars `.grey)
 
                 // Run prompt
                 const response = await prompts({
