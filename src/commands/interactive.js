@@ -20,7 +20,6 @@ module.exports = async (input, cmdObj) => {
 
     // Log
     console.log('[*] Starting interactive mode...'.green)
-    console.log('[!] Don\'t forget to add --output option to save the render.'.grey.bold)
 
     // Choose ranges
     if (cmdObj.range) {

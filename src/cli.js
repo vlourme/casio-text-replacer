@@ -14,11 +14,11 @@ const texts = require('./commands/texts');
 const interactive = require('./commands/interactive');
 
 // Program opening
-console.log('[i] CTR-tool v1.1 by Victor Lourme'.cyan.bold);
+console.log('[i] CTR-tool v1.1.1 by Victor Lourme'.cyan.bold);
 console.log('[!] Warning: Please do not use this tool to cheat.'.red.bold);
 
 // Program definitions
-program.version('1.1')
+program.version('1.1.1')
 program.description('Text Replacement Tool for Casio 35+E/75+E calculators OS')
 
 // Action: Get texts
