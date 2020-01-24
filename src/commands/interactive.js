@@ -59,7 +59,7 @@ module.exports = async (input, cmdObj, program) => {
 
         for (var i = 0; i < api.text.length; i++) {
             // Display text
-            console.log(`- "`.grey + text.grey.bold + `" - ${api.text[i].length} chars `.grey)
+            console.log(`- "`.grey + api.text[i].grey.bold + `" - ${api.text[i].length} chars `.grey)
 
             // Run prompt
             const response = await prompts({
