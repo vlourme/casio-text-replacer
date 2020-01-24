@@ -9,6 +9,9 @@
 ## Disclaimer
 > **This tool is not made to cheat nor to incite people to cheat on their exams. This is for education purposes only and I'm not responsible in case of wrong usage of this tool.**
 
+## Video preview
+<a href="https://asciinema.org/a/bfgDi6Yl4zVOf1RctRrAGZc1n" target="_blank"><img src="https://asciinema.org/a/bfgDi6Yl4zVOf1RctRrAGZc1n.svg" /></a>
+
 ## Usage
 **Note 1:** This could be uncomplete or not working on every systems and calculators.
 **Note 2:** This as been designed for 35+E and 75+E models, and heavily based on 75+E OS ([hex addresses](docs/Text%20Offsets.md)).
