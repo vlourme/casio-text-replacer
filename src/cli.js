@@ -85,7 +85,7 @@ program
         // List texts
         console.log('[i] Lines in the selected area:'.blue.italic)
         api.text.forEach(text => {
-            console.log(`- ${text}`.grey)
+            console.log(`- "${text}" - ${text.length} chars `.grey)
         });
     });
 
