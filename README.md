@@ -28,6 +28,11 @@
 | `-t`, `--to` | String | Stop reading the file at a certain hex address/offset (e.g.: 0x0021F4B1) |
 | `-o`, `--output` | String | Save the edited binary to the given path |
 
+### Documentation
+> This is actually uncomplete, more docs will come in future.
+
+- [Helper texts locations offsets/addresses](docs/Text%20Offsets.md)
+
 ## How it works ?
 **Note:** This is designed for Casio 35+E and 75+E, I recommand upgrading your system to the 75+E one if you're having a 35+E model.
 
