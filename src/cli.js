@@ -21,9 +21,6 @@ console.log('[!] Warning: Please do not use this tool to cheat.'.red.bold);
 program.version('1.0')
 program.description('Text Replacement Tool for Casio 35+E/75+E calculators OS')
 
-// Options
-program.option('-o, --output <path>', 'Output file for buffer');
-
 // Action: Get texts
 program
     .command('texts <input>')
