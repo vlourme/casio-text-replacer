@@ -6,7 +6,6 @@
  */
 
 // Dependencies
-const fs = require('fs');
 const replace = require('buffer-replace');
 
 // Export class
