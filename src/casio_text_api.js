@@ -94,6 +94,9 @@ module.exports = class CasioTextAPI {
                 if (hex == "20" && this.buffer.readInt8(i + 1).toString(16) == 0) {
                     // Increment to bypass next hex
                     i++;
+                } else if (hex == "20" && this.buffer.readInt8(i + 1).toString(16) == 20) {
+                    // Bypass long break
+                    i++;
                 } else {
                     // Register letter
                     line += String.fromCharCode(number);

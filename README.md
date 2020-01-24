@@ -13,6 +13,7 @@
 
 This tool will cut and format correctly the text from the binary file of the OS and let you replace texts with something other. This is a pretty simple process, the only thing is to respect breaks from the system and there are two types:
 - `00 20`, that I'll call *basic break*.
+- repeated occurences of `20 20`, that I'll call *long break*.
 - `00 20 20 00`, that I'll call *advanced break*.
 
 Once we identified **breaks and every texts with their maximum lengths**, we're able to replace them and **render a new binary file**.
