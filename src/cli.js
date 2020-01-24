@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 /**
  * Casio Text Replacer
  * Command-line tool
