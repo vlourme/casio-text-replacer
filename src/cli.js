@@ -76,6 +76,7 @@ program
 
         // Log
         console.log('[*] Starting interactive mode...'.green)
+        console.log('[!] Don\'t forget to add --output option to save the render.'.grey.bold)
 
         // Get the area
         let buffer = fs.readFileSync(input);
@@ -107,7 +108,7 @@ program
                     name: 'prompt',
                     message: 'Edit this text?',
                     initial: false
-                })
+                });
 
                 if (response.prompt) {
                     // Ask for new text
@@ -132,36 +133,39 @@ program
                 }
             }
 
-            // Review edits
-            console.log('[*] Here is the final list after editing:'.blue.italic)
-
-            // Display list
-            api.text.forEach(text => {
-                console.log(`- ${text}`.grey)
-            });
-
-            // Ask for re-edition
-            const reedit = await prompts({
-                type: 'confirm',
-                message: 'Are changes correct?',
-                name: 'prompt',
-                initial: true
-            });
-
-            if (!reedit.prompt) {
-                console.log('[*] Relaunch edition mode...'.yellow.bold)
-
-                // Re-edit
-                edit();
-            }
-
-            // Render file
+            // If saving is enabled
             if (program.output) {
-                // Get new buffer
-                const new_buf = api.render();
+                // Review edits
+                console.log('[*] Here is the final list after editing:'.blue.italic)
 
-                // Save buffer
-                fs.writeFileSync(program.output, new_buf);
+                // Display list
+                api.text.forEach(text => {
+                    console.log(`- ${text}`.grey)
+                });
+
+                // Ask for re-edition
+                const reedit = await prompts({
+                    type: 'confirm',
+                    message: 'Are changes correct?',
+                    name: 'prompt',
+                    initial: true
+                });
+
+                if (!reedit.prompt) {
+                    console.log('[*] Relaunch edition mode...'.yellow.bold)
+
+                    // Re-edit
+                    edit();
+                }
+
+                // Render file
+                if (program.output) {
+                    // Get new buffer
+                    const new_buf = api.render();
+
+                    // Save buffer
+                    fs.writeFileSync(program.output, new_buf);
+                }
             }
         });
 
