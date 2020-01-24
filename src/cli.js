@@ -146,12 +146,12 @@ program
                 // Ask for re-edition
                 const reedit = await prompts({
                     type: 'confirm',
-                    message: 'Are changes correct?',
+                    message: 'Do you want to re-edit?',
                     name: 'prompt',
-                    initial: true
+                    initial: false
                 });
 
-                if (!reedit.prompt) {
+                if (reedit.prompt) {
                     console.log('[*] Relaunch edition mode...'.yellow.bold)
 
                     // Re-edit
