@@ -1,6 +1,7 @@
 // Dependencies
 const fs = require('fs');
 const colors = require('colors');
+const bufferReplace = require('buffer-replace');
 const prompts = require('prompts');
 const API = require('../casio_text_api');
 const offsets = JSON.parse(fs.readFileSync('./offsets.json'));
@@ -38,9 +39,12 @@ module.exports = async (input, cmdObj) => {
     // Get the area
     let buffer = fs.readFileSync(input);
 
+    // Get area to edit
+    let area;
+
     if (!cmdObj.all) {
         if (cmdObj.from != null && cmdObj.to != null) {
-            buffer = buffer.slice(cmdObj.from, cmdObj.to);
+            area = buffer.slice(cmdObj.from, cmdObj.to);
         } else {
             console.log('[!] Please define start and end address.'.red.bold);
             process.exit();
@@ -48,7 +52,7 @@ module.exports = async (input, cmdObj) => {
     }
 
     // Initialize API
-    const api = new API(buffer);
+    const api = new API(area);
 
     // Run async
     const edit = async () => {
@@ -112,7 +116,10 @@ module.exports = async (input, cmdObj) => {
             })
 
             // Get new buffer
-            const new_buf = api.render();
+            const new_area = api.render();
+
+            // Replace in original buffer
+            const new_buf = bufferReplace(buffer, area, new_area)
 
             // Save buffer
             fs.writeFileSync(saving.path, new_buf);
