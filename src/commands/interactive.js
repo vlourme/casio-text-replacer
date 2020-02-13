@@ -126,7 +126,7 @@ module.exports = async (input, cmdObj) => {
                 name: 'text',
                 message: `Write the new text (${api.text[selection.number].length} chars max)`,
                 validate: value => {
-                    if (value.length >= api.text[selection.number].length)
+                    if (value.length > api.text[selection.number].length)
                         return 'Too much characters!'
                     else
                         return true;
