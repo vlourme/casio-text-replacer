@@ -12,6 +12,6 @@
     "buffer-replace": "^1.0.0",
     "colors": "^1.4.0",
     "commander": "^5.1.0",
-    "prompts": "^2.3.0"
+    "prompts": "^2.3.2"
   }
 }
